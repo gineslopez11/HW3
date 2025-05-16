@@ -1,3 +1,4 @@
+#pragma once
 #include "Presion.hpp"
 #include "Posicion.hpp"
 
@@ -6,7 +7,7 @@ class SaveFlightData{
 	Posicion posicion;
 	Presion presion;
 
-	SaveFlightData(Posicion pos, Presion pres);
+	SaveFlightData(const Posicion& pos,const Presion& pres);
 	void serializar(ofstream& out) const;
 	void deserializar(ifstream& in);
 };
