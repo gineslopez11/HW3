@@ -1,6 +1,4 @@
-#include "Circulo.hpp"
-#include "Elipse.hpp"
-#include "Rectangulo.hpp"
+#include "ProcesadorFigura.hpp"
 
 //Implementacion Punto
 Punto::Punto(float x1, float y1) : x(x1), y(y1){}
