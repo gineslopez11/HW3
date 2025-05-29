@@ -3,21 +3,30 @@
 #include <iostream>
 
 using namespace std;
+
 int main() {
-	
     JsonBuilder builder;
 
-    // Datos de ejemplo (usando tu clase GenerarData)
-    vector<double> doubles = {1.3, 2.1, 3.2};
-    vector<string> strings = {"Hola", "Mundo"};
-    vector<vector<int>> lists = {{1, 2}, {3, 4}};
+    GenerarData<double> generadorDoubles;
+    GenerarData<string> generadorStrings;
+    GenerarData<int> generadorInts;
 
-    // Construye el JSON
-    builder.addData("vec_doubles", doubles);
-    builder.addData("palabras", strings);
-    builder.addData("listas", lists);
+    generadorDoubles.AddValue(1.3);
+    generadorDoubles.AddValue(2.1);
+    generadorDoubles.AddValue(3.2);
 
-    // Imprime el resultado
+    generadorStrings.AddValue("Hola");
+    generadorStrings.AddValue("Mundo");
+
+    generadorInts.AddValue(1);
+    generadorInts.AddValue(2);
+    generadorInts.AddValue(3);
+    generadorInts.AddValue(4);
+
+    builder.addData(generadorDoubles.getData());
+    builder.addData(generadorStrings.getData());
+    builder.addData(generadorInts.getData());
+
     cout << builder.build() << endl;
 
     return 0;
